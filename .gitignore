@@ -1,3 +1,7 @@
 .env
 .venv/
+<<<<<<< HEAD
 .beta/
+=======
+.beta/
+>>>>>>> f5e8d511ffbf22d5fcd820809fbd7eccd15d1db5
