@@ -2,6 +2,9 @@
 
 A small Discord application that tells a joke when called using JokeAPI.
 
+### Time spent
+  ![](https://hackatime-badge.hackclub.com/U078VN0UU2K/Jokes)
+
 ---
 
 ## ⭐ Features
