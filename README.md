@@ -58,6 +58,8 @@ I am going to be clear about the AI usage of this repo:
 
 - Find permanent hosting server (HackClub?)
 - Promote on dicord app sites
+- Rebrand (logoand banner
+- Ship on SoM
 
 ---
 ## 🪪 Credits
@@ -68,4 +70,10 @@ I am going to be clear about the AI usage of this repo:
 ## 📱 Contact Me
 
 [Email](freddieayershon+jokeapidis@gmail.com)
+
 [Summer of Making](https://summer.hackclub.com/users/6849)
+
+### ⚠️ Disclamer
+
+- Jokes were not written by me and are from external library (credited above)
+- ```NFSW```,```racist``` and ```sexist``` jokes from the library are turned off
