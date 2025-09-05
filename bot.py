@@ -1,11 +1,10 @@
-#Install the required packages before running the bot:
 import os
+import discord
 from discord.ext import commands
 from discord import Intents
 from dotenv import load_dotenv
 from jokeapi import Jokes
 
-#This is the function that talks to JokeAPI to find a joke
 async def get_jokes():
     j = await Jokes()
     joke = await j.get_joke(lang="en", blacklist=['nsfw', 'racist', 'sexist', 'explicit'])
@@ -14,20 +13,31 @@ async def get_jokes():
     else:
         return f'{joke["setup"]}\n{joke["delivery"]}'
 
-#Make sure you have a .env file with your DISCORD_TOKEN variable set
+# Load token
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
-#Set up the bot with the command prefix and intents
+# Intents & bot
 intents = Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix='/', intents=intents)
 
-#This is the command that the bot will respond to
-@bot.command(name='joke')
-async def joke(ctx):
+#  Legacy command
+@bot.command(name="joke")
+async def joke_prefix(ctx):
     response = await get_jokes()
     await ctx.send(response)
 
-#Run the bot
+# Slash command
+@bot.tree.command(name="joke", description="Get a random joke")
+async def joke_slash(interaction: discord.Interaction):
+    response = await get_jokes()
+    await interaction.response.send_message(response)
+
+
+@bot.event
+async def on_ready():
+    await bot.tree.sync()
+    print(f"Logged in as {bot.user}")
+
 bot.run(TOKEN)
