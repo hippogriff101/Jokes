@@ -56,9 +56,9 @@ I am going to be clear about the AI usage of this repo:
 
 ## 📃 To Do
 
-- Find permanent hosting server (HackClub?)
+- Find permanent hosting server (HackClub?) ✅
 - Promote on dicord app sites
-- Rebrand (logoand banner
+- Rebrand (logo and banner) ✅
 - Ship on SoM
 
 ---
@@ -69,11 +69,15 @@ I am going to be clear about the AI usage of this repo:
 
 ## 📱 Contact Me
 
-[Email](freddieayershon+jokeapidis@gmail.com)
+[Email](mailto:freddieayershon+jokeapidis@gmail.com)
 
 [Summer of Making](https://summer.hackclub.com/users/6849)
+
+[Hack Club Slack - @Freddie](https://hackclub.slack.com/team/U078VN0UU2K)
+
+Discord Server - (_in development_)
 
 ### ⚠️ Disclamer
 
 - Jokes were not written by me and are from external library (credited above)
-- ```NFSW```,```racist``` and ```sexist``` jokes from the library are turned off
+- ```NFSW```,```racist```, ```explisit``` and ```sexist``` jokes from the library are turned off
