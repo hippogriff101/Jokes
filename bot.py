@@ -1,17 +1,23 @@
 import os
+import logging
 import discord
 from discord.ext import commands
 from discord import Intents
 from dotenv import load_dotenv
 from jokeapi import Jokes
 
+logging.basicConfig(level=logging.INFO)
+
 async def get_jokes():
-    j = await Jokes()
-    joke = await j.get_joke(lang="en", blacklist=['nsfw', 'racist', 'sexist', 'explicit'])
-    if joke["type"] == "single":
-        return joke["joke"]
-    else:
-        return f'{joke["setup"]}\n{joke["delivery"]}'
+    try:
+        j = await Jokes()
+        joke = await j.get_joke(lang="en", blacklist=['nsfw', 'racist', 'sexist', 'explicit'])
+        if joke["type"] == "single":
+            return joke["joke"]
+        else:
+            return f'{joke["setup"]}\n{joke["delivery"]}'
+    except Exception as e:
+        return "Oops! Couldn't fetch a joke right now."
 
 # Load token
 load_dotenv()
@@ -22,7 +28,7 @@ intents = Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix='/', intents=intents)
 
-#  Legacy command
+# Legacy command
 @bot.command(name="joke")
 async def joke_prefix(ctx):
     response = await get_jokes()
@@ -33,7 +39,6 @@ async def joke_prefix(ctx):
 async def joke_slash(interaction: discord.Interaction):
     response = await get_jokes()
     await interaction.response.send_message(response)
-
 
 @bot.event
 async def on_ready():
